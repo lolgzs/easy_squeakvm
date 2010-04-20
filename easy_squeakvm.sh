@@ -76,4 +76,4 @@ mkdir build && cd build
 $squeak_dir/unix/cmake/configure --src=$pharo_dir/src32 --prefix=$vm_bin_dir
 make && make install
 
-echo "Finished !"
+echo "Finished ! Your fresh Squeak VM binaries in $vm_bin_dir"

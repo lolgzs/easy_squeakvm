@@ -8,6 +8,13 @@ It:
 - put binaries in out/squeakvm
 
 
+Just clone the repository then
+./easy_squeakvm.sh
+
+To clean just remove the out directory.
+
+Look at variables on top of script to customize paths and versions used.
+
 Check:
 http://book.pharo-project.org/book/Virtual-Machine/Building/BuildVMOnLinux
 http://pharo-project.org
