@@ -1,0 +1,14 @@
+Simple bash / Linux script to build Squeak VM for Pharo.
+It:
+- checkout squeakvm sources from svn repository
+- download PharoCore image
+- load VMMaker into PharoCore
+- generate the interpreter
+- build the VM
+- put binaries in out/squeakvm
+
+
+Check:
+http://book.pharo-project.org/book/Virtual-Machine/Building/BuildVMOnLinux
+http://pharo-project.org
+http://www.squeakvm.org/unix/
