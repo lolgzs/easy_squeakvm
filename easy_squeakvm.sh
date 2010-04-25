@@ -11,7 +11,7 @@ internal_plugins="UUIDPlugin FT2Plugin"
 
 pharo_dir=$working_dir/$pharo_version
 pharo_image=$pharo_dir/$pharo_version.image
-pharo_archive=$pharo_dir.zip
+pharo_archive=$pharo_version.zip
 download_url="https://gforge.inria.fr/frs/download.php/26775/$pharo_archive"
 
 squeak_dir=$working_dir/platforms
