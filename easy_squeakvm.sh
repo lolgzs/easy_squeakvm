@@ -4,8 +4,8 @@ working_dir=`pwd`/out
 vm_bin_dir=$working_dir/squeakvm
 
 pharo_version="PharoCore-1.0-10517"
-squeak_rev=2188
-configuration_of_vmmaker='1.3'
+squeak_rev=2203
+configuration_of_vmmaker='1.4'
 internal_plugins="UUIDPlugin FT2Plugin"
 
 
@@ -60,11 +60,14 @@ fi
 echo "Generate source"
 generatest="`pwd`/generate.st"
 if [ ! -e $generatest ]; then
-    echo "(VMMaker forPlatform: 'unix')
-               platformRootDirectoryName: '$squeak_dir';
-               initializeAllExternalBut: #($internal_plugins);
-               generateEntire.
-               SmalltalkImage current snapshot: true andQuit: true." > $generatest
+    echo "|vmm|
+          vmm := (VMMaker forPlatform: 'unix')
+                    platformRootDirectoryName: '$squeak_dir';
+                    initializeAllExternalBut: #($internal_plugins).
+          vmm externalModules remove:#NewsqueakIA32ABIPlugin.
+          vmm generateEntire.
+
+          SmalltalkImage current snapshot: true andQuit: true." > $generatest
 fi
 squeak -headless $pharo_image $generatest
 
